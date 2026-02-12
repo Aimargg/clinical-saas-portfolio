@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* HCE UPNA - Modern Clinical Design System
+   Aesthetic: Linear/Notion inspired, clean medical interface
+   Target: Gen Z university students
+*/
+
+@layer base {
+  :root {
+    /* Base Colors - Clean clinical white/gray */
+    --background: 220 20% 98%;
+    --foreground: 224 24% 12%;
+
+    /* Cards - Subtle elevation */
+    --card: 0 0% 100%;
+    --card-foreground: 224 24% 12%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 24% 12%;
+
+    /* Primary - Modern Indigo */
+    --primary: 238 76% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 238 70% 95%;
+    --primary-glow: 238 76% 70%;
+
+    /* Secondary - Soft Teal accent */
+    --secondary: 172 52% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 172 50% 95%;
+
+    /* Muted - Subtle grays */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Accent - Warm highlight */
+    --accent: 172 52% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Semantic Colors */
+    --success: 152 58% 48%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 152 55% 94%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 38 90% 15%;
+    --warning-light: 38 90% 95%;
+
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 70% 96%;
+
+    --info: 210 100% 52%;
+    --info-foreground: 0 0% 100%;
+    --info-light: 210 95% 96%;
+
+    /* Clinical Alert Colors */
+    --alert-allergy: 0 80% 58%;
+    --alert-allergy-light: 0 75% 96%;
+    --alert-urgent: 32 95% 55%;
+    --alert-urgent-light: 32 90% 95%;
+
+    /* Episode Type Colors */
+    --episode-primary: 172 52% 50%;
+    --episode-hospital: 238 76% 60%;
+    --episode-urgency: 0 72% 58%;
+    --episode-consult: 280 55% 58%;
+
+    /* Border & Input */
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 238 76% 60%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 9% 46%;
+    --sidebar-primary: 238 76% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 224 24% 12%;
+    --sidebar-border: 220 14% 92%;
+    --sidebar-ring: 238 76% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(238 76% 60%), hsl(238 76% 70%));
+    --gradient-teal: linear-gradient(135deg, hsl(172 52% 50%), hsl(172 52% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 98%) 0%, hsl(238 70% 98%) 100%);
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px hsl(224 24% 12% / 0.04);
+    --shadow-sm: 0 2px 4px hsl(224 24% 12% / 0.06);
+    --shadow-md: 0 4px 12px hsl(224 24% 12% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(224 24% 12% / 0.1);
+    --shadow-glow: 0 0 20px hsl(238 76% 60% / 0.15);
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 224 24% 8%;
+    --foreground: 220 14% 96%;
+
+    --card: 224 20% 12%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 224 20% 12%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 238 70% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 238 50% 20%;
+    --primary-glow: 238 70% 75%;
+
+    --secondary: 172 52% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 172 40% 18%;
+
+    --muted: 224 18% 18%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 172 52% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 152 55% 45%;
+    --success-light: 152 40% 18%;
+
+    --warning: 38 85% 50%;
+    --warning-light: 38 60% 18%;
+
+    --destructive: 0 65% 55%;
+    --destructive-light: 0 50% 18%;
+
+    --info: 210 90% 55%;
+    --info-light: 210 60% 18%;
+
+    --alert-allergy: 0 70% 55%;
+    --alert-allergy-light: 0 50% 18%;
+    --alert-urgent: 32 85% 50%;
+    --alert-urgent-light: 32 60% 18%;
+
+    --episode-primary: 172 50% 45%;
+    --episode-hospital: 238 65% 60%;
+    --episode-urgency: 0 65% 55%;
+    --episode-consult: 280 50% 55%;
+
+    --border: 224 18% 20%;
+    --input: 224 18% 20%;
+    --ring: 238 70% 65%;
+
+    --sidebar-background: 224 20% 10%;
+    --sidebar-foreground: 220 9% 70%;
+    --sidebar-primary: 238 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 18% 16%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 224 18% 18%;
+    --sidebar-ring: 238 70% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(238 70% 55%), hsl(238 70% 65%));
+    --gradient-teal: linear-gradient(135deg, hsl(172 50% 45%), hsl(172 50% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(224 24% 8%) 0%, hsl(238 40% 12%) 100%);
+
+    --shadow-xs: 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-sm: 0 2px 4px hsl(0 0% 0% / 0.25);
+    --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 24px hsl(0 0% 0% / 0.35);
+    --shadow-glow: 0 0 20px hsl(238 70% 60% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Card Variants */
+  .card-clinical {
+    @apply bg-card rounded-xl border border-border shadow-[var(--shadow-sm)] transition-all duration-200;
+  }
+  
+  .card-clinical:hover {
+    @apply shadow-[var(--shadow-md)];
+  }
+
+  .card-alert {
+    @apply bg-[hsl(var(--alert-allergy-light))] border-l-4 border-l-[hsl(var(--alert-allergy))] rounded-xl p-4;
+  }
+
+  /* Badge Variants */
+  .badge-open {
+    @apply bg-[hsl(var(--success-light))] text-[hsl(var(--success))] border-[hsl(var(--success)/0.2)];
+  }
+
+  .badge-closed {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .badge-urgent {
+    @apply bg-[hsl(var(--destructive-light))] text-[hsl(var(--destructive))];
+  }
+
+  /* Episode Type Badges */
+  .episode-primary-care {
+    @apply border-l-4 border-l-[hsl(var(--episode-primary))];
+  }
+
+  .episode-hospital {
+    @apply border-l-4 border-l-[hsl(var(--episode-hospital))];
+  }
+
+  .episode-urgency {
+    @apply border-l-4 border-l-[hsl(var(--episode-urgency))];
+  }
+
+  .episode-consult {
+    @apply border-l-4 border-l-[hsl(var(--episode-consult))];
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-md)];
+  }
+
+  .hover-glow {
+    @apply transition-all duration-200 hover:shadow-[var(--shadow-glow)];
+  }
+
+  /* Progress Bar */
+  .progress-clinical {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+
+  .progress-clinical-fill {
+    @apply h-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] rounded-full transition-all duration-500;
+  }
+
+  /* Timeline */
+  .timeline-connector {
+    @apply absolute left-6 top-12 bottom-0 w-0.5 bg-border;
+  }
+
+  /* Sidebar Item */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-foreground transition-all duration-200;
+  }
+
+  .sidebar-item:hover {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground;
+  }
+
+  .sidebar-item.active {
+    @apply bg-primary/10 text-primary font-medium;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
